@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ВСЕ НОВОСТИ</title>
+
+</head>
+
+<body>
+{% for record in records %}
+
+
+<h1>
+    {{ record.title }}
+
+</h1>
+<p><img src="{% static 'img/' %}">{{ record.image_news }}</p>
+
+<h3>
+    {{ record.text_news }}
+</h3>
+
+<h6>
+    <div>
+        (
+
+
+        {% for tag in tags %}
+
+        <a href="/news/">{{ tag.name }}</a>
+
+        {% endfor %}
+        )
+    </div>
+</h6>
+
+{% endfor %}
+
+
+</body>
+</html>
